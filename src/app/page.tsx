@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col min-h-screen">
       
-      <header>
-        <nav className="flex items-center justify-between px-2 py-2">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]">
+        <nav className="flex items-center justify-between px-4 py-3">
     
             <h1 className="text-xl font-bold">
               JONATHAN SILVA
@@ -40,17 +40,17 @@ export default function Home() {
       </header>
        {/* MOBILE MENU (BOTTOM) */}
   <nav className="fixed bottom-0 w-full flex justify-around py-3 bg-[#1C1B1B] md:hidden z-50">
-    <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><HomeIcon />Inicio</a>
-    <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><User />Sobre</a>
-    <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><Zap />Habilidades</a>
-    <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><SquareTerminal />Projetos</a>
+    <a href="#home" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><HomeIcon />Inicio</a>
+    <a href="#sobre" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><User />Sobre</a>
+    <a href="#projetos" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><SquareTerminal />Projetos</a>
+    <a href="#contato" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><Mail />Contato</a>
   </nav>
 
-      <main className="flex-1 pb-20 md:pb-0">
+      <main className="flex-1 pt-16 pb-20 md:pb-0">
         {/* Conteúdo */}
 
         {/* intro */}
-        <section className="flex flex-col items-center justify-center mt-10 p-6">
+        <section id="home" className="flex flex-col items-center justify-center mt-10 p-6 scroll-mt-20">
           <Image src="/assets/img/photo.png" 
           alt="Profile" 
           width={200} 
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </section>
         {/* sobre */}
-        <section className="mt-5 p-2 flex flex-col items-center">
+        <section id="sobre" className="mt-5 p-2 flex flex-col items-center scroll-mt-20">
           <h1 className="text-primary text-2xl md:text-3xl font-bold mx-4 my-4 ">Sobre mim</h1>
           <p className="mx-4 my-4">Formado em Análise e desenvolvimento de sistemas, estou estudando tecnologias front-end como react, react native, nextJS, tailwind e typescript. Criando aplicativos e interfaces modernas e escaláveis</p>
 
@@ -115,10 +115,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <ProjectsCarousel />
+        <section id="projetos" className="w-full scroll-mt-20">
+          <ProjectsCarousel />
+        </section>
 
         {/* contato */}
-        <section className="mt-5 p-2 flex flex-col items-center">
+        <section id="contato" className="mt-5 p-2 flex flex-col items-center scroll-mt-20">
           <h1 className="text-primary text-2xl md:text-3xl font-bold mx-4 my-4 ">Contato</h1>
           <p className="mx-4 my-4">Entre em contato comigo através dos meus canais de comunicação</p>
           <div className="flex flex-col gap-4 bg-neutral-800 p-4 rounded-xl w-full max-w-md">
