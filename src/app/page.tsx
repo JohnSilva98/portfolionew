@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
-import { Home as HomeIcon, User, Zap, SquareTerminal, Mail} from "lucide-react";
-import { faLinkedin, faGithub,faHtml5,faCss3,faReact,faTailwindCss,faJs, faGit,faTypescript } from "@fortawesome/free-brands-svg-icons";
+import { Home as HomeIcon, User, Zap, SquareTerminal, Mail } from "lucide-react";
+import { faLinkedin, faGithub, faHtml5, faCss3, faReact, faTailwindCss, faJs, faGit, faTypescript } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 
 export default function Home() {
   return (
@@ -17,10 +20,10 @@ export default function Home() {
 
           {/* Menu */}
           <ul className="hidden md:flex gap-6">
-            <li>Home</li>
-            <li>Sobre</li>
-            <li>Projetos</li>
-            <li>Contato</li>
+            <li className="cursor-pointer hover:text-primary transition-colors duration-300 "><a className="focus:text-primary focus:underline" href="#home">Home</a></li>
+            <li className="cursor-pointer hover:text-primary transition-colors duration-300 "><a className="focus:text-primary focus:underline" href="#sobre">Sobre</a></li>
+            <li className="cursor-pointer hover:text-primary transition-colors duration-300 "><a className="focus:text-primary focus:underline" href="#projetos">Projetos</a></li>
+            <li className="cursor-pointer hover:text-primary transition-colors duration-300 "><a className="focus:text-primary focus:underline" href="#contato">Contato</a></li>
           </ul>
 
           {/* Botão */}
@@ -36,7 +39,7 @@ export default function Home() {
 
       </header>
        {/* MOBILE MENU (BOTTOM) */}
-  <nav className="fixed bottom-0 w-full flex justify-around py-3 bg-[#1C1B1B] md:hidden ">
+  <nav className="fixed bottom-0 w-full flex justify-around py-3 bg-[#1C1B1B] md:hidden z-50">
     <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><HomeIcon />Inicio</a>
     <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><User />Sobre</a>
     <a href="#" className="flex flex-col items-center hover:text-secondary transition-colors duration-300 focus:text-primary"><Zap />Habilidades</a>
@@ -64,17 +67,17 @@ export default function Home() {
 
           {/* social links */}
           <div className="flex gap-4 my-2 ">
-            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300" href="https://www.linkedin.com/in/jonathansilva98/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 md:w-12 md:h-12" /></a>
-            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300" href="https://github.com/JohnSilva98" target="_blank"><FontAwesomeIcon icon={faGithub} className="w-8 h-8 md:w-12 md:h-12" /></a>
-            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300" href="mailto:bsilva.jonathan@outlook.com" target="_blank">
-              <Mail className="w-8 h-8 md:w-12 md:h-12" />
+            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300 flex items-center justify-center w-12 h-12 md:w-16 md:h-16" href="https://www.linkedin.com/in/jonathansilva98/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="text-3xl md:text-4xl" /></a>
+            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300 flex items-center justify-center w-12 h-12 md:w-16 md:h-16" href="https://github.com/JohnSilva98" target="_blank"><FontAwesomeIcon icon={faGithub} className="text-3xl md:text-4xl" /></a>
+            <a className="text-[#00D1FF] hover:text-secondary transition-colors duration-300 flex items-center justify-center w-12 h-12 md:w-16 md:h-16" href="mailto:bsilva.jonathan@outlook.com" target="_blank">
+              <Mail className="w-12 h-12 md:w-12 md:h-12 shrink" />
             </a>
           </div>
         </section>
         {/* sobre */}
         <section className="mt-5 p-2 flex flex-col items-center">
-          <h1 className="text-primary text-2xl md:text-3xl font-bold">Sobre mim</h1>
-          <p>Formado em Análise e desenvolvimento de sistemas, estou estudando tecnologias front-end como react, react native, nextJS, tailwind e typescript. Criando aplicativos e interfaces modernas e escaláveis</p>
+          <h1 className="text-primary text-2xl md:text-3xl font-bold mx-4 my-4 ">Sobre mim</h1>
+          <p className="mx-4 my-4">Formado em Análise e desenvolvimento de sistemas, estou estudando tecnologias front-end como react, react native, nextJS, tailwind e typescript. Criando aplicativos e interfaces modernas e escaláveis</p>
 
           {/* tecnologias */}
           <div className="grid gap-4 w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-4">
@@ -112,12 +115,26 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* projetos */}
+        <ProjectsCarousel />
+
+        {/* contato */}
         <section className="mt-5 p-2 flex flex-col items-center">
-          <h1 className="text-primary text-2xl md:text-3xl font-bold">Projetos</h1>
-          <p>Projetos desenvolvidos com react, react native, nextJS, tailwind e typescript</p>
+          <h1 className="text-primary text-2xl md:text-3xl font-bold mx-4 my-4 ">Contato</h1>
+          <p className="mx-4 my-4">Entre em contato comigo através dos meus canais de comunicação</p>
+          <div className="flex flex-col gap-4 bg-neutral-800 p-4 rounded-xl w-full max-w-md">
+            <a href="mailto:bsilva.jonathan@outlook.com" className="flex items-center gap-2 hover:scale-105 transition-transform">
+            <Mail className="w-12 h-12 md:w-12 md:h-12" />
+            bsilva.jonathan@outlook.com
+          </a>
+          <a href="https://www.linkedin.com/in/jonathansilva98/" target="_blank" className="flex items-center gap-2 hover:scale-105 transition-transform">
+            <FontAwesomeIcon icon={faLinkedin} className="text-5xl" />
+            LinkedIn
+          </a>
+          </div>
+        
         </section>
         
+
       </main>
 
     </div>
