@@ -28,7 +28,7 @@ export default function Home() {
 
           {/* Botão */}
           <a
-            className="bg-primary text-neutral px-1 py-1 rounded cursor-pointer hover:bg-neutral"
+            className="bg-primary text-neutral px-1 py-1 rounded cursor-pointer hover:bg-primary/80 transition-colors duration-300"
             href="https://wa.me/5511986332860"
             target="_blank"
           >
