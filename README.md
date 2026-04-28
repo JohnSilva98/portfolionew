@@ -22,7 +22,7 @@
 
 A modern, responsive portfolio website built with **Next.js 15**, **React**, **TypeScript**, and **Tailwind CSS**. Features bilingual support (Portuguese/English), dark/light theme toggle, and an interactive project carousel.
 
-**Live Demo:** [https://jonathansilva.dev](https://jonathansilva.dev)
+**Live Demo:** [https://jonathan-silva.vercel.app](https://jonathan-silva.vercel.app)
 
 ---
 
