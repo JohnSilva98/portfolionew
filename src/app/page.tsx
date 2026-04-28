@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Home as HomeIcon, User, SquareTerminal, Mail, Sun, Moon, Download } from "lucide-react";
-import { faLinkedin, faGithub, faHtml5, faCss3, faReact, faTailwindCss, faJs, faGit, faTypescript } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faHtml5, faCss3, faReact, faTailwindCss, faJs, faGit, faTypescript, faWindows, faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 
@@ -199,6 +199,11 @@ export default function Home() {
               <FontAwesomeIcon icon={faReact} className="w-10 h-10 md:w-14 md:h-14 text-cyan-400" />
               <span className="text-sm text-gray-300">React</span>
             </div>
+            <div className="bg-tertiary rounded-xl p-4 flex flex-col items-center gap-2 ">
+              <FontAwesomeIcon icon={faAndroid} className="w-10 h-10 md:w-14 md:h-14 text-green-500" />
+              <FontAwesomeIcon icon={faApple} className="w-10 h-10 md:w-14 md:h-14 text-white" />
+              <span className="text-sm text-gray-300">React Native</span>
+            </div>
             <div className="bg-tertiary rounded-xl p-4 flex flex-col items-center gap-2">
               <FontAwesomeIcon icon={faTailwindCss} className="w-10 h-10 md:w-14 md:h-14 text-cyan-500" />
               <span className="text-sm text-gray-300">Tailwind</span>
@@ -210,6 +215,14 @@ export default function Home() {
             <div className="bg-tertiary rounded-xl p-4 flex flex-col items-center gap-2">
               <FontAwesomeIcon icon={faGithub} className="w-10 h-10 md:w-14 md:h-14 text-white" />
               <span className="text-sm text-gray-300">GitHub</span>
+            </div>
+            <div className="bg-tertiary rounded-xl p-4 flex flex-col items-center gap-2">
+              <FontAwesomeIcon icon={faWindows} className="w-10 h-10 md:w-14 md:h-14 text-blue-500" />
+              <span className="text-sm text-gray-300">Windows</span>
+            </div>
+            <div className="bg-tertiary rounded-xl p-4 flex flex-col items-center gap-2">
+              <FontAwesomeIcon icon={faApple} className="w-10 h-10 md:w-14 md:h-14 text-white" />
+              <span className="text-sm text-gray-300">MacOS</span>
             </div>
           </div>
         </section>
